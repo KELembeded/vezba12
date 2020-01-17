@@ -16,6 +16,7 @@
         input wire VGA_SREADY,
         output wire VGA_SVALID,
         output wire [C_S_AXIS_TDATA_WIDTH-1 :0] VGA_SDATA,
+        output wire VGA_SLAST,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -38,6 +39,7 @@
     wire    axis_valid;
     wire [C_S_AXIS_TDATA_WIDTH-1 : 0]   axis_data;
     
+    assign VGA_SLAST = S_AXIS_TLAST;
     assign S_AXIS_TREADY = axis_ready;
     assign axis_ready    =   VGA_SREADY;
     

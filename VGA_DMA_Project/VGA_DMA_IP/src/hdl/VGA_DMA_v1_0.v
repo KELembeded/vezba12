@@ -33,6 +33,7 @@
     wire [15:0] VGA_SDATA;
     wire VGA_SREADY;
     wire VGA_SVALID;
+    wire VGA_SLAST;
 	VGA_DMA_AXIS # ( 
 		.C_S_AXIS_TDATA_WIDTH(C_S00_AXIS_TDATA_WIDTH)
 	) VGA_DMA_AXIS_inst (
@@ -45,7 +46,8 @@
 		.S_AXIS_TVALID(s00_axis_tvalid),
 		.VGA_SREADY(VGA_SREADY),
 		.VGA_SVALID(VGA_SVALID),
-		.VGA_SDATA(VGA_SDATA)
+		.VGA_SDATA(VGA_SDATA),
+		.VGA_SLAST(VGA_SLAST)
 	);
 	
 	VGA #(
@@ -56,6 +58,7 @@
 	              .sdata(VGA_SDATA),
 	              .svalid(VGA_SVALID),
 	              .sready(VGA_SREADY),
+	              .slast(VGA_SLAST),
 	              .hsync(hsync),
 	              .vsync(vsync));
 	
