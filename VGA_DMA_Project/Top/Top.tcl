@@ -147,5 +147,5 @@ if {$version < 2019.2} {
     file mkdir $resultDir/VGA_DMA_controller.sdk
     file copy -force $resultDir/VGA_DMA_controller.runs/impl_1/VGA_DMA_controller_wrapper.sysdef $resultDir/VGA_DMA_controller.sdk/VGA_DMA_controller_wrapper.hdf
 } else {
-    write_hw_platform -fixed -force  -file /home/nikola/Documents/git_repos/VGA_DMA_Controller/VGA_DMA_Project/Top/result/VGA_DMA_controller_wrapper.xsa
+    write_hw_platform -fixed -force  -include_bit -file /home/nikola/Documents/git_repos/VGA_DMA_Controller/VGA_DMA_Project/Top/result/VGA_DMA_controller_wrapper.xsa
 }
